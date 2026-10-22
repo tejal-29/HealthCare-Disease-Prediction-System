@@ -1,221 +1,145 @@
-# Advanced Multi-Disease Risk Prediction System
 
-An AI-powered healthcare application that predicts the risk of multiple diseases using Machine Learning models. The system enables users to enter clinical and demographic information and receive instant disease risk predictions through a modern web interface.
+# Healthcare — Multi-Disease Prediction System
 
----
+Healthcare is a machine learning-based web application that demonstrates predictions for four health-related classification tasks: diabetes, heart disease, stroke, and thyroid conditions. Built with Python and Streamlit, the application provides a simple interface for entering health-related measurements and viewing the output of trained machine learning models.
 
-## 🚀 Features
+## Features
 
-- Heart Disease Risk Prediction
-- Diabetes Risk Prediction
-- Thyroid Disease Prediction
-- Stroke Risk Prediction
-- Real-time Prediction Results
-- Responsive React Frontend
-- REST API Integration with Flask
-- Multiple Machine Learning Model Comparison
-- Feature Engineering & Data Preprocessing
+- Diabetes prediction using a trained machine learning model.
+- Heart disease prediction based on cardiovascular features.
+- Stroke prediction using demographic and health-related inputs.
+- Thyroid classification using laboratory measurements.
+- Interactive dashboard with separate assessment pages.
+- Form-based data entry and prediction results.
+- Streamlit interface for running the application locally or deploying it online.
 
----
+## Technologies Used
 
-## 🛠 Tech Stack
+- **Programming Language:** Python
+- **Frontend and Web Framework:** Streamlit
+- **Data Handling:** Pandas, NumPy
+- **Machine Learning:** Scikit-learn
+- **Model Storage:** Pickle
+- **Deployment:** Streamlit Community Cloud
+- **Version Control:** Git and GitHub
 
-### Frontend
-- React.js
-- HTML5
-- CSS3
-- JavaScript
+## Project Structure
 
-### Backend
-- Flask
-- Python
-
-### Machine Learning
-- Scikit-learn
-- XGBoost
-- Pandas
-- NumPy
-
-### Models Evaluated
-- XGBoost
-- Random Forest
-- Support Vector Machine (SVM)
-- Logistic Regression
-- Multi-Layer Perceptron (MLP)
-- Decision Tree
-
----
-
-## 📂 Project Structure
-
-```
-Multi-Disease-Risk-Prediction/
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   └── package.json
-│
-├── backend/
-│   ├── app.py
-│   ├── models/
-│   ├── dataset/
-│   ├── utils/
-│   ├── requirements.txt
-│   └── saved_models/
-│
-├── screenshots/
-│
-└── README.md
+```text
+Multi-Disease-Detection-System/
+├── app.py
+├── requirements.txt
+├── README.md
+└── saved_models/
+    ├── diabetes_model.sav
+    ├── heart_disease_model.sav
+    ├── stroke_model.sav
+    └── thyroid_model.sav
 ```
 
----
+## Installation and Setup
 
-## ⚙️ Machine Learning Workflow
-
-1. Data Collection
-2. Data Cleaning
-3. Missing Value Handling
-4. Feature Engineering
-5. Feature Scaling
-6. Model Training
-7. Model Evaluation
-8. Model Selection
-9. Model Deployment using Flask API
-
----
-
-## 📊 Diseases Covered
-
-| Disease | Prediction |
-|----------|------------|
-| ❤️ Heart Disease | Risk Classification |
-| 🩸 Diabetes | Risk Classification |
-| 🦋 Thyroid Disorder | Risk Classification |
-| 🧠 Stroke | Risk Classification |
-
----
-
-## 📈 Model Evaluation
-
-The application evaluates multiple machine learning algorithms and selects the best-performing model based on validation metrics.
-
-Evaluation Metrics:
-
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC Score
-
----
-
-## 🌐 Application Workflow
-
-```
-User Input
-      │
-      ▼
-React Frontend
-      │
-REST API Request
-      │
-      ▼
-Flask Backend
-      │
-Data Preprocessing
-      │
-      ▼
-Machine Learning Model
-      │
-Prediction
-      │
-      ▼
-Prediction Result
-```
-
----
-
-## 💻 Installation
-
-### Clone Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/tejal-29/Multi-Disease-Detection-System.git
-cd Multi-Disease-Detection-System
+cd MediScope
 ```
 
----
+Replace `tejal-29` with your GitHub username.
 
-### Backend Setup
+### 2. Create a virtual environment
 
 ```bash
-cd backend
-
 python -m venv venv
+```
 
-# Windows
+Activate it on Windows:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+If you use Command Prompt instead:
+
+```cmd
 venv\Scripts\activate
-
-# Linux/macOS
-source venv/bin/activate
-
-pip install -r requirements.txt
-
-python app.py
 ```
 
-Backend runs on:
-
-```
-http://localhost:5000
-```
-
----
-
-### Frontend Setup
+### 3. Install dependencies
 
 ```bash
-cd frontend
-
-npm install
-
-npm start
+python -m pip install -r requirements.txt
 ```
 
-Frontend runs on:
+### 4. Run the application
 
-```
-http://localhost:3000
-```
-
----
-
-## 📷 Screenshots
-
-Add screenshots here.
-
-Example:
-
-```
-screenshots/
-│
-├── home.png
-├── prediction.png
-├── result.png
+```bash
+python -m streamlit run app.py
 ```
 
----
+The application will open in your browser, usually at:
 
-## 🔮 Future Enhancements
+```text
+http://localhost:8501
+```
 
-- User Authentication
-- Patient History Management
-- Medical Report Upload
-- PDF Report Generation
-- Doctor Dashboard
-- Appointment Booking
-- Cloud Deployment
-- Explainable AI (SHAP/LIME)
-- Model Monitoring
-- Multi-language Support
+## How to Use
+
+1. Open the application dashboard.
+2. Select a prediction module from the sidebar.
+3. Enter the requested input values.
+4. Submit the form to run the corresponding trained model.
+5. Review the prediction result.
+
+## Machine Learning Models
+
+The application loads four pre-trained classification models:
+
+| Model | Purpose |
+|---|---|
+| Diabetes Model | Diabetes-related classification |
+| Heart Disease Model | Heart disease-related classification |
+| Stroke Model | Stroke-related classification |
+| Thyroid Model | Thyroid-related classification |
+
+The models are stored in the `saved_models/` directory and loaded by the Streamlit application.
+
+## Deployment
+
+Healthcare can be deployed using Streamlit Community Cloud.
+
+1. Push the project to a GitHub repository.
+2. Open [Streamlit Community Cloud](https://share.streamlit.io/).
+3. Connect your GitHub account.
+4. Select the repository and branch.
+5. Set `app.py` as the application entry point.
+6. Deploy the application.
+
+Ensure that `requirements.txt` contains the required dependencies and that the trained model files are accessible to the deployed application.
+
+## Limitations
+
+- Prediction quality depends on the training datasets, model performance, feature engineering, and input preprocessing.
+- Input values and category encodings must match those expected by the trained models.
+- Saved models may require compatible versions of Python and Scikit-learn.
+- The application does not replace professional medical evaluation.
+
+## Disclaimer
+
+Healthcare is an educational machine learning project developed for learning and demonstration purposes. Its outputs are not medical diagnoses or validated clinical recommendations. Consult a qualified healthcare professional for medical advice.
+
+## Future Improvements
+
+- Add model performance metrics and evaluation reports.
+- Improve input validation and preprocessing consistency.
+- Add visual summaries of model predictions.
+- Include dataset documentation and model training methodology.
+- Improve automated testing and deployment workflows.
+
+## Author
+
+**Tejal Komb**
+
+B.Tech in Computer Science and Engineering  
+Specialization: Artificial Intelligence and Machine Learning
